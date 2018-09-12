@@ -16,12 +16,5 @@ node {
                 anchore name: 'anchore_images'
             
         }
-        stage('teardown') {
-           
-                sh'''
-                    for i in `cat anchore_images | awk '{print $1}'`;do docker rmi $i; done
-                '''
-            
-        }
-
+       
 }
