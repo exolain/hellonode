@@ -12,7 +12,7 @@ node {
  }
    stage('analyze') {
         
-                sh 'echo "registry.hub.docker.com/exolain/hellonode:latest `pwd`/Dockerfile" > anchore_images'
+                sh 'echo "exolain/hellonode:latest `pwd`/Dockerfile" > anchore_images'
                 anchore name: 'anchore_images'
             
         }
