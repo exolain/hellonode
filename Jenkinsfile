@@ -11,10 +11,10 @@ node {
         }
  }
    stage('analyze') {
-            steps {
+        
                 sh 'echo "docker.io/exolain/hellonode:latest `pwd`/Dockerfile" > anchore_images'
                 anchore name: 'anchore_images'
-            }
+            
         }
         stage('teardown') {
             steps {
